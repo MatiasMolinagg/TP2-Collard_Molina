@@ -10,24 +10,10 @@ int main (void) {
 	configuracionpines (); //si no anda asi definir toda la funcion dentro del main a ver que hace
 
 													//PROGRAMA 2.1
-	while(1)
-	{
-
-		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13) == Bit_RESET )		//si el boton esta presionado entonces que entre y ponga el bit en 1
-		{
-			GPIO_SetBits(GPIOA, GPIO_Pin_5); 							//ESTA PONE DIRECTAMENTE EL BIT EN 1 si no anda poner el puerto no el bit
-		}
-		else
-		{
-			GPIO_ResetBits(GPIOA, GPIO_Pin_5);			//mantener apagado el led -- Si se configura con un pull down no es neceesario esta linea
-		}
-	}
-
-													//PROGRAMA 2.2
 //	while(1)
 //	{
 //
-//		if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_9) == Bit_RESET )		//si el boton esta presionado entonces que entre y ponga el bit en 1
+//		if(GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13) == Bit_RESET )		//si el boton esta presionado entonces que entre y ponga el bit en 1
 //		{
 //			GPIO_SetBits(GPIOA, GPIO_Pin_5); 							//ESTA PONE DIRECTAMENTE EL BIT EN 1 si no anda poner el puerto no el bit
 //		}
@@ -36,6 +22,20 @@ int main (void) {
 //			GPIO_ResetBits(GPIOA, GPIO_Pin_5);			//mantener apagado el led -- Si se configura con un pull down no es neceesario esta linea
 //		}
 //	}
+
+													//PROGRAMA 2.2
+	while(1)
+	{
+
+		if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_9) == Bit_RESET )		//si el boton esta presionado entonces que entre y ponga el bit en 1
+		{
+			GPIO_SetBits(GPIOA, GPIO_Pin_5); 							//ESTA PONE DIRECTAMENTE EL BIT EN 1 si no anda poner el puerto no el bit
+		}
+		else
+		{
+			GPIO_ResetBits(GPIOA, GPIO_Pin_5);			//mantener apagado el led -- Si se configura con un pull down no es neceesario esta linea
+		}
+	}
 
 }
 
